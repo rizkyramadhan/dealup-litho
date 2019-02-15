@@ -1,0 +1,73 @@
+apply plugin: "com.android.application"
+
+apply plugin: "kotlin-android"
+
+apply plugin: "kotlin-android-extensions"
+
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "id.dealup.dealup"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 21
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.core:core-ktx:1.1.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0-beta01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    // sillyandroid
+    implementation "me.angrybyte.sillyandroid:sillyandroid:1.4.0"
+
+    // timeago
+    implementation 'com.github.marlonlom:timeago:4.0.1'
+    // khttp client
+    implementation 'khttp:khttp:0.1.0'
+    // Anko: doAsync{}
+    implementation 'org.jetbrains.anko:anko-commons:0.10.4'
+    // Litho
+    implementation 'com.facebook.litho:litho-core:0.23.0'
+    implementation 'com.facebook.litho:litho-widget:0.23.0'
+    compileOnly 'com.facebook.litho:litho-annotations:0.23.0'
+    kapt "com.facebook.litho:litho-processor:0.23.0"
+    // SoLoader
+    implementation 'com.facebook.soloader:soloader:0.5.1'
+    // For integration with Fresco
+    implementation 'com.facebook.litho:litho-fresco:0.23.0'
+    // For testing
+    testImplementation 'com.facebook.litho:litho-testing:0.23.0'
+    // Sections
+    implementation 'com.facebook.litho:litho-sections-core:0.23.0'
+    implementation 'com.facebook.litho:litho-sections-widget:0.23.0'
+    compileOnly 'com.facebook.litho:litho-sections-annotations:0.23.0'
+    kapt "com.facebook.litho:litho-sections-processor:0.23.0"
+    implementation files('libs/libfb-release.jar')
+}

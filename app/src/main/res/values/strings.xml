@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DealUp</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_text_kewajiban">Kewajiban</string>
+    <string name="tab_text_pengumuman">Pengumuman</string>
+    <string name="action_logout">Logout</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="app_appbar_scrolling_view_behavior" translatable="false">
+        com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior
+    </string>
+    <string name="refresh_list">Refresh List</string>
+
+</resources>
